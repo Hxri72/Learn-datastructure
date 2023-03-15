@@ -1,43 +1,106 @@
+// class TrieNode{
+//     constructor(){
+//         this.children = {};
+//         this.isWordEnd = false;
+//     }
+// }
+
+// class Trie{
+//     constructor(){
+//         this.root = new TrieNode()
+//     }
+
+//     insert(word){
+//         let node = this.root;
+//         for(let i=0;i<word.length;i++){
+//             const char = word[i]
+//             if(!node.children[char]){
+//                 node.children[char] = new TrieNode()
+//             }
+//             node = node.children[char]
+//         }
+//         node.isWordEnd = true
+
+//     }
+
+//     search(word){
+//         let node = this.root
+//         for(let i=0;i<word.length;i++){
+//             const char = word[i]
+//             if(!node.children[char]){
+//                 return false;
+//             }
+//             node = node.children[char]
+//         }
+//         return node.isWordEnd;
+//     }
+
+//     startWith(prefix){
+//         let node = this.root
+//         for(let i=0;i<prefix.length;i++){
+//             const char = prefix[i]
+//             if(!node.children[char]){
+//                 return false;
+//             }
+//             node = node.children[char]
+//         }
+//         return true;
+//     }
+
+    
+// }
+
+// const trie = new Trie()
+
+// trie.insert('hari')
+// trie.insert('manu')
+
+// console.log(trie.search('manu'))
+// console.log(trie.search('madhu'))
+
+// console.log(trie.startWith('ma'))
+// console.log(trie.startWith('ha'))
+
+
 class TrieNode{
     constructor(){
-        this.children = {};
-        this.isWordEnd = false;
+        this.children = {}
+        this.endoftheword = false;
     }
 }
 
-class Trie{
+class Trie {
     constructor(){
         this.root = new TrieNode()
     }
 
     insert(word){
-        let node = this.root;
-        for(let i=0;i<word.length;i++){
+        let node = this.root
+        for(let i=0;i< word.length;i++){
             const char = word[i]
             if(!node.children[char]){
-                node.children[char] = new TrieNode()
+                node.children[char] = new TrieNode();
             }
             node = node.children[char]
         }
-        node.isWordEnd = true
-
+        node.endoftheword = true
     }
 
     search(word){
         let node = this.root
-        for(let i=0;i<word.length;i++){
+        for (let i=0;i<word.length;i++){
             const char = word[i]
             if(!node.children[char]){
                 return false;
             }
             node = node.children[char]
-        }
-        return node.isWordEnd;
+        }   
+        return node.endoftheword;
     }
 
-    startWith(prefix){
+    startWithword(prefix){
         let node = this.root
-        for(let i=0;i<prefix.length;i++){
+        for(let i=0;i< prefix.length;i++){
             const char = prefix[i]
             if(!node.children[char]){
                 return false;
@@ -46,17 +109,14 @@ class Trie{
         }
         return true;
     }
-
-    
 }
 
 const trie = new Trie()
 
 trie.insert('hari')
-trie.insert('manu')
+trie.insert('prasad')
 
-console.log(trie.search('manu'))
-console.log(trie.search('madhu'))
+console.log(trie.search('hari'))
 
-console.log(trie.startWith('ma'))
-console.log(trie.startWith('ha'))
+console.log(trie.startWithword('ha'));
+
