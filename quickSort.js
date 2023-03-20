@@ -1,10 +1,35 @@
+// function quickSort(arr){
+
+//     if(arr.length < 2){
+//         return arr
+//     }
+//     let pivot = arr[arr.length - 1]
+//     let left = []
+//     let right = []
+
+//     for(let i=0;i<arr.length-1;i++){
+//         if(arr[i] < pivot){
+//             left.push(arr[i])
+//         }else{
+//             right.push(arr[i])
+//         }
+//     }
+
+//     return [ ...quickSort(left) , pivot , ...quickSort(right) ]
+
+// }
+
+// let arr = [2,-1,6,87,99,34,-13]
+// console.log(quickSort(arr))
+
 
 function quickSort(arr){
 
     if(arr.length < 2){
         return arr
     }
-    let pivot = arr[arr.length - 1]
+
+    let pivot = arr[arr.length-1]
     let left = []
     let right = []
 
@@ -16,9 +41,9 @@ function quickSort(arr){
         }
     }
 
-    return [...quickSort(left) , pivot , ...quickSort(right)]
+    return [...quickSort(left),pivot,...quickSort(right)]
+
 }
 
-
-let arr = [2,-1,6,87,99,34,-13]
+let arr = [3,6,-1,-4,7,89,34]
 console.log(quickSort(arr))
