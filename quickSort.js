@@ -23,12 +23,13 @@
 // console.log(quickSort(arr))
 
 
+const arr = [2,98,56,77,-3,54]
+
 function quickSort(arr){
 
-    if(arr.length < 2){
+    if(arr.length<2){
         return arr
     }
-
     let pivot = arr[arr.length-1]
     let left = []
     let right = []
@@ -42,8 +43,6 @@ function quickSort(arr){
     }
 
     return [...quickSort(left),pivot,...quickSort(right)]
-
 }
 
-let arr = [3,6,-1,-4,7,89,34]
-console.log(quickSort(arr))
+console.log(quickSort(arr)) 
